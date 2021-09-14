@@ -17,7 +17,7 @@ const showProducts = (products) => {
     div.classList.add("col");
     div.innerHTML = `
     <div class="single-product h-100">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center bg-white p-2">
         <img class="product-image" src=${image}></img>
       </div>
       <div>
