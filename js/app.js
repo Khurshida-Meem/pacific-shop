@@ -17,11 +17,11 @@ const showProducts = (products) => {
     div.classList.add("col");
     div.innerHTML = `
     <div class="single-product h-100">
-      <div class="d-flex justify-content-center bg-white p-2">
+      <div class="d-flex justify-content-center bg-white p-2 image-container">
         <img class="product-image" src=${image}></img>
       </div>
       <div>
-        <h4 class=" text-success">${product.title}</h4>
+        <h4 class=" text-success mt-2">${product.title}</h4>
         <small style="margin-bottom: 0;">Category: ${product.category}</small>
         <h2 class=" text-success">Price: $ ${product.price}</h2>
         <p>Rating: ${product.rating.rate}<i class="fas fa-star text-warning"></i> (${product.rating.count} Ratings)</p>
