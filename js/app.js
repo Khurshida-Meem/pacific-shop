@@ -6,6 +6,7 @@ const loadProducts = () => {
 };
 loadProducts();
 
+
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
@@ -20,19 +21,25 @@ const showProducts = (products) => {
         <img class="product-image" src=${image}></img>
       </div>
       <div>
-        <h3 class=" text-success">${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <h2 class=" text-success">Price: $ ${product.price}</h2>
-      <p>Rating: ${product.rating.rate}<i class="fas fa-star text-warning"></i> <br> ${product.rating.count}    Ratings</p>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn     btn-success">add to
-        cart</button>
-      <button id="details-btn" class="btn btn-warning text-success fw-bold" >Details</button>
+        <h4 class=" text-success">${product.title}</h4>
+        <small style="margin-bottom: 0;">Category: ${product.category}</small>
+        <h2 class=" text-success">Price: $ ${product.price}</h2>
+        <p>Rating: ${product.rating.rate}<i class="fas fa-star text-warning"></i> (${product.rating.count} Ratings)</p>
+        <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn     btn-success">add to
+          cart</button>
+        <button id="details-btn" class="btn btn-warning text-success fw-bold" >Details</button>
       </div>
     </div>
     `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+// clear all data
+const clearData = () => {
+
+}
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -42,6 +49,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+// return all prices for calculate total price
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
@@ -87,4 +95,3 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
-
